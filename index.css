@@ -1,0 +1,600 @@
+/* ============================================
+   Mahatma Gandhi Hospital — Professional CSS
+   Theme: Refined Medical / Trust & Clarity
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+  --deep-navy: #0b1f3a;
+  --mid-navy: #163260;
+  --accent-teal: #1a8f85;
+  --accent-teal-light: #22b5a8;
+  --accent-gold: #c9a84c;
+  --soft-white: #f7f9fc;
+  --light-gray: #eef1f6;
+  --text-dark: #1a1f2e;
+  --text-muted: #5a6478;
+  --white: #ffffff;
+  --card-shadow: 0 8px 32px rgba(11, 31, 58, 0.10);
+  --card-shadow-hover: 0 18px 48px rgba(11, 31, 58, 0.18);
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--soft-white);
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  height: 72px;
+  background: var(--deep-navy);
+  border-bottom: 2px solid var(--accent-gold);
+  box-shadow: 0 2px 24px rgba(11, 31, 58, 0.22);
+}
+
+.navbar .logo {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.navbar .logo::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--accent-gold);
+  margin-top: 3px;
+  border-radius: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav-links li a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.80);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.nav-links li a:hover {
+  color: var(--accent-gold);
+  border-bottom-color: var(--accent-gold);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+  background: linear-gradient(
+    125deg,
+    var(--deep-navy) 0%,
+    var(--mid-navy) 55%,
+    #0d4a55 100%
+  );
+  overflow: hidden;
+}
+
+/* Decorative large cross / medical cross background */
+.hero::before {
+  content: '+';
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32vw;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-body);
+}
+
+/* Animated gradient orb */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 143, 133, 0.25) 0%, transparent 70%);
+  right: 18%;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulse-orb 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-orb {
+  0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-50%) scale(1.12); opacity: 1; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  animation: fadeInUp 0.9s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.18;
+  margin-bottom: 1.2rem;
+}
+
+.hero-content h1 span {
+  color: var(--accent-gold);
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 2.2rem;
+  padding-left: 3px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.88rem 2.2rem;
+  background: var(--accent-gold);
+  color: var(--deep-navy);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.35);
+}
+
+.btn:hover {
+  background: #e0bc6a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201, 168, 76, 0.5);
+}
+
+/* ============================================
+   GENERAL SECTION
+   ============================================ */
+.section {
+  padding: 90px 8%;
+}
+
+.section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--deep-navy);
+  text-align: center;
+  margin-bottom: 56px;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 52px;
+  height: 3px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+  margin: 14px auto 0;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 6%;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1 1 360px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+.about-image::before {
+  content: '';
+  position: absolute;
+  inset: -8px 0 0 -8px;
+  border: 3px solid var(--accent-gold);
+  border-radius: 6px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.03);
+}
+
+.about-content {
+  flex: 1 1 400px;
+}
+
+.about-content h2 {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.about-content h2::after {
+  margin: 12px 0 0;
+}
+
+.about-content p {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  margin-bottom: 1.1rem;
+  line-height: 1.85;
+}
+
+/* ============================================
+   DOCTORS SECTION
+   ============================================ */
+.doctors {
+  background: var(--light-gray);
+}
+
+.doctor-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.doctor-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+  flex: 1 1 240px;
+  max-width: 300px;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-teal), var(--accent-gold));
+  border-radius: 8px 8px 0 0;
+}
+
+.doctor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.doctor-card img {
+  width: 120px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 0 auto 1.2rem;
+  border: 3px solid var(--light-gray);
+}
+
+.doctor-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--deep-navy);
+  margin-bottom: 0.6rem;
+  line-height: 1.35;
+}
+
+.doctor-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.doctor-card p strong {
+  color: var(--accent-teal);
+  font-weight: 600;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.service-cards {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  flex: 1 1 220px;
+  max-width: 320px;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--card-shadow-hover);
+  border-bottom-color: var(--accent-teal);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-teal);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--deep-navy);
+  margin-bottom: 0.7rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: var(--deep-navy);
+  color: rgba(255,255,255,0.80);
+  padding: 60px 8% 0;
+  border-top: 2px solid var(--accent-gold);
+}
+
+.footer-container {
+  display: flex;
+  gap: 4%;
+  flex-wrap: wrap;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  font-family: var(--font-display);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+  font-size: 1.25rem;
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.85;
+  margin-bottom: 0.4rem;
+}
+
+.footer-section p a {
+  color: rgba(255,255,255,0.62);
+  transition: color var(--transition);
+}
+
+.footer-section p a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 0.04em;
+}
+
+
+
+/* ============================================
+   PAGE HEADER (Shared for Subpages)
+   ============================================ */
+.page-header {
+  position: relative;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 8%;
+  background: linear-gradient(
+    135deg,
+    var(--deep-navy) 0%,
+    var(--mid-navy) 60%,
+    var(--accent-teal) 100%
+  );
+  overflow: hidden;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/clean-textile.png');
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 14px 5%;
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 60px 6% 80px;
+  }
+
+  .hero::before {
+    font-size: 55vw;
+    right: -8%;
+    opacity: 0.5;
+  }
+
+  .page-header {
+    min-height: 30vh;
+    padding: 60px 6%;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-image { flex: 1 1 100%; }
+
+  .section { padding: 60px 5%; }
+
+  .doctor-card, .card { max-width: 100%; }
+
+  .footer-container { flex-direction: column; gap: 2rem; }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | Mahatma Gandhi Hospital</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">Healthcare</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Page Header Banner -->
+<section class="page-header">
+    <div class="page-header-content">
+        <h1>Contact Us</h1>
+        <p>Get in Touch with Our Medical Experts</p>
+    </div>
+</section>
+
+<!-- Contact Content -->
+<section class="section contact-section">
+    <div class="contact-container">
+        
+        <!-- Contact Information Blocks -->
+        <div class="contact-info">
+            <h2>We Are Here to Help</h2>
+            <p>Our dedicated staff is always available to answer your questions and provide the care you need.</p>
+
+            <div class="info-item">
+                <span class="info-icon">📍</span>
+                <div>
+                    <h4>Our Location</h4>
+                    <p>Mahatma Gandhi Hospital Road, Near City Center,<br>Chinchwad, Pune, Maharashtra 411019, India</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-icon">📞</span>
+                <div>
+                    <h4>Phone & Emergency</h4>
+                    <p><strong>Emergency 24x7:</strong> +91 98765 43210</p>
+                    <p><strong>OPD Desk:</strong> 020 1234 5678</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-icon">✉️</span>
+                <div>
+                    <h4>Email Us</h4>
+                    <p>info@mghospital.com</p>
+                    <p>appointments@mghospital.com</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <span class="info-icon">🕒</span>
+                <div>
+                    <h4>Working Hours</h4>
+                    <p><strong>Emergency & Trauma:</strong> 24 Hours</p>
+                    <p><strong>OPD Timings:</strong> Mon - Sat (9:00 AM to 8:00 PM)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact / Appointment Form -->
+        <div class="contact-form">
+            <h2>Book an Appointment</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Select Department</label>
+                    <select id="department" name="department" required>
+                        <option value="" disabled selected>Select a department</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="orthopedics">Orthopedics</option>
+                        <option value="neurology">Neurology</option>
+                        <option value="pediatrics">Pediatrics</option>
+                        <option value="general">General Medicine</option>
+                        <option value="other">Other / Not Sure</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Symptoms</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Briefly describe your reason for visit..."></textarea>
+                </div>
+
+                <button type="submit" class="btn submit-btn">Request Appointment</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- Google Map section -->
+<section class="map-section">
+    <!-- Embed standard Google Maps iframe -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15126.28620995241!2d73.7869!3d18.6298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b8429e5590b5%3A0xc0fb1dfb49bbdec0!2sChinchwad%2C%20Pimpri-Chinchwad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Mahatma Gandhi Hospital</h3>
+            <p>Providing trusted healthcare services with modern facilities and expert doctors.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <p><a href="index.html">Home</a></p>
+            <p><a href="about.html">About</a></p>
+            <p><a href="services.html">Services</a></p>
+            <p><a href="contact.html">Contact</a></p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact Info</h4>
+            <p>📍 Chinchwad, Pune, India</p>
+            <p>📞 +91 9876543210</p>
+            <p>✉ info@mghospital.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Mahatma Gandhi Hospital | All Rights Reserved
+    </div>
+</footer>
+
+</body>
+</html>
